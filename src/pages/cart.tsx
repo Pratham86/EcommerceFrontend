@@ -10,28 +10,11 @@ import axios from "axios";
 import { server } from "../redux/store";
 
 
-// const cartItems = [
-//   {
-//     productId : "hsbhbs",
-//     photo : "https://www.aptronixindia.com/media/catalog/product/cache/31f0162e6f7d821d2237f39577122a8a/m/a/macbook_pro_13_inch_intel_fileminimizer__1.png",
-//     name : "Macbook",
-//     quantity : 4,
-//     price : 3000,
-//     stock : 10
-//   }
-// ]
-// const subtotal = 4000;
-// const tax = Math.round(subtotal * 0.18)
-// const discount = 400;
-// const shippingCharges = 200;
-// const total = subtotal + tax + shippingCharges;
-
-
 const Cart = () => {
 
   const dispatch = useDispatch();
 
-  const {cartItems , subtotal,total,tax,shippingCharges,discount,shippingInfo } = useSelector((state :{cartReducer : CartReducer}) => state.cartReducer);
+  const {cartItems , subtotal,total,tax,shippingCharges,discount } = useSelector((state :{cartReducer : CartReducer}) => state.cartReducer);
   
 
   const [couponCode , setCouponCode] = useState<string>("");
